@@ -1,0 +1,6 @@
+Revision history for Perl extension Random.
+
+0.01  Sun Dec  8 00:33:24 2013
+	- original version; created by h2xs 1.23 with options
+		-A -n Random
+
