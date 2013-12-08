@@ -25,7 +25,23 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  blah blah blah
+	Random::choice
+
+When choice(100, 100) 100,000 times
+	use List::Util::shuffle and {1..100}:
+	2.18092513084412 second
+
+	use this module:
+	1.46189713478088 second
+
+
+When choice(100, 10000) 10,000 times
+	use List::Util::shuffle and {1..10000}:
+	10.7093698978424
+
+	use this module:
+	0.212372064590454
+
 
 COPYRIGHT AND LICENCE
 
