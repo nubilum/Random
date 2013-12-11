@@ -574,7 +574,7 @@ metafile : create_distdir
 	$(NOECHO) $(ECHO) '---' > META_new.yml
 	$(NOECHO) $(ECHO) 'abstract: '\''Perl extension for blah blah blah'\''' >> META_new.yml
 	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
-	$(NOECHO) $(ECHO) '  - '\''nubilum'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) '  - nubilum' >> META_new.yml
 	$(NOECHO) $(ECHO) 'build_requires:' >> META_new.yml
 	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: 0' >> META_new.yml
 	$(NOECHO) $(ECHO) 'configure_requires:' >> META_new.yml

@@ -1,7 +1,7 @@
 ---
 abstract: 'Perl extension for blah blah blah'
 author:
-  - 'æ­¦è¤ è± <nubilum@apple.com>'
+  - nubilum
 build_requires:
   ExtUtils::MakeMaker: 0
 configure_requires:

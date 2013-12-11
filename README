@@ -37,10 +37,10 @@ When choice(100, 100) 100,000 times
 
 When choice(100, 10000) 10,000 times
 	use List::Util::shuffle and {1..10000}:
-	10.7093698978424
+	10.7093698978424 second
 
 	use this module:
-	0.212372064590454
+	0.212372064590454 second
 
 
 COPYRIGHT AND LICENCE

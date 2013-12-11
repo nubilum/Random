@@ -108,25 +108,24 @@ XS(XS_Random_choice)
     }
 #endif
 
-	int i;
-	int reti = 0;
-	int max = SvIV(num);
-	int random_scope = items - 1;
-	for ( i = 1; i < items; i++ ) {
+    int i;
+    int reti = 0;
+    int max = SvIV(num);
+    int random_scope = items - 1;
+    for ( i = 1; i < items; i++ ) {
         int swap = (int)(Drand01() * (double)(random_scope--)) + i;
         SV *tmp = ST(swap);
         ST(swap) = ST(i);
-        ST(i) = tmp;
 
-        ST(reti++) = sv_2mortal(newSVsv(ST(i)));
+        ST(reti++) = sv_2mortal(newSVsv(tmp));
 
         if (max == reti) {
         	break;
     	}
-	}
+    }
     XSRETURN(reti);
 }
-#line 130 "Random.c"
+#line 129 "Random.c"
 	PUTBACK;
 	return;
     }
