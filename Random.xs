@@ -38,20 +38,14 @@ PPCODE:
     }
 #endif
 
-    int i;
-    int reti = 0;
     int max = SvIV(num);
     int random_scope = items - 1;
-    for ( i = 1; i < items; i++ ) {
-        int swap = (int)(Drand01() * (double)(random_scope--)) + i;
-        SV *tmp = ST(swap);
-        ST(swap) = ST(i);
+    for ( int i = 0; i < max; ++i ) {
+        int swap   = (int)(Drand01() * (double)(random_scope--)) + (i + 1);
+        SV* choice = ST(swap);
+        ST(swap)   = ST(i);
         
-        ST(reti++) = sv_2mortal(newSVsv(tmp));
-        
-        if (max == reti) {
-        	break;
-    	}
+        ST(i) = sv_2mortal(newSVsv(choice));
     }
-    XSRETURN(reti);
+    XSRETURN(max);
 }

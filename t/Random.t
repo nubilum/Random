@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 4;
+use Test::More tests => 7;
 use Random qw(choice);
 
 
@@ -22,3 +22,12 @@ my @in2 = 1..100;
 is( @r,	@in2, 'over');
 @r = sort { $a <=> $b } @r;
 is( "@r",	"@in2", 'values');
+
+my @in3 = 1..100;
+is( "@in2", "@in3", 'no change in base list' );
+
+my @hash_list = (+{ a => 1 }, );
+@r = choice(1, @hash_list);
+$r[0]->{a} = 2;
+is( $r[0]->{a}, 2, 'changed hash value == 2' );
+is( $r[0]->{a}, $hash_list[0]->{a}, 'effect base hash' );
